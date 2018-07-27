@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ParkingSpotsService } from '../parking-spots.service';
+import {ParkingSpot} from '../ParkingSpot'
 
 @Component({
   selector: 'app-parking-spots',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParkingSpotsComponent implements OnInit {
 
-  constructor() { }
+  parkingSpots: ParkingSpot[];
+
+  constructor(private parkingSpotService: ParkingSpotsService) { }
 
   ngOnInit() {
+    this.getSpots();
+  }
+
+  getSpots(): void {
+    this.parkingSpotService.getParkingSpots()
+    .subscribe(parkingSpots => this.parkingSpots = parkingSpots);
   }
 
 }

@@ -1,3 +1,6 @@
-<p>
-  parking-spots works!
-</p>
+<div>
+  <h1>Parking Spots Available</h1>
+    <li *ngFor="let p of parkingSpots">
+      <span>{{p.id}}</span> {{p.title}}
+    </li>
+</div>
