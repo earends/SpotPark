@@ -20,10 +20,14 @@ export class ParkingSpotsService {
   ) { }
 
   getParkingSpots():Observable<ParkingSpot[]> {
+    
      return this.http.get<ParkingSpot[]>(this.parking_spot_url)
       .pipe(
         catchError(this.handleError('getSpots', []))
       );
+      
+     
+     
   }
 
 

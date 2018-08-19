@@ -8,6 +8,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ParkingSpotsComponent } from './parking-spots/parking-spots.component';
 import { ReportComponent } from './report/report.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { ParkingSpotsCreateComponent } from './parking-spots-create/parking-spots-create.component';
+import { ParkingSpotsEditComponent } from './parking-spots-edit/parking-spots-edit.component';
+import { ParkingSpotsDeleteComponent } from './parking-spots-delete/parking-spots-delete.component';
+import { ParkingSpotComponent } from './parking-spot/parking-spot.component';
 
 @NgModule({
   imports: [
@@ -21,6 +25,10 @@ import { AppRoutingModule } from './/app-routing.module';
     ParkingSpotsComponent,
     NavbarComponent,
     ReportComponent,
+    ParkingSpotsCreateComponent,
+    ParkingSpotsEditComponent,
+    ParkingSpotsDeleteComponent,
+    ParkingSpotComponent,
   ],
   bootstrap: [ AppComponent ]
 })
