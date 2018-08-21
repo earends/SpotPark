@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ParkingSpotsService } from '../parking-spots.service';
 import {Location} from '@angular/common';
 import { ParkingSpot } from '../ParkingSpot';
-
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-parking-spots-edit',
@@ -16,7 +16,8 @@ export class ParkingSpotsEditComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
     private parkingSpotService: ParkingSpotsService,
-    private location: Location
+    private location: Location,
+    private router:Router
   ) { }
 
   ngOnInit(): void {
@@ -31,7 +32,7 @@ export class ParkingSpotsEditComponent implements OnInit {
 
   updateSpot(): void {
     this.parkingSpotService.updateParkingSpot(this.spot)
-    .subscribe(spot => console.log(spot));
+    .subscribe(spot =>  this.router.navigate(['/Home']) );
   }
 
 }

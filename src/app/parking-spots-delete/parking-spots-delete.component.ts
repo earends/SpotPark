@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ParkingSpotsService } from '../parking-spots.service';
 import {Location} from '@angular/common';
 import {ParkingSpot} from '../ParkingSpot';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-parking-spots-delete',
@@ -14,7 +15,9 @@ export class ParkingSpotsDeleteComponent implements OnInit {
   spot:ParkingSpot;
   constructor( private route: ActivatedRoute,
     private parkingSpotService: ParkingSpotsService,
-    private location: Location) { }
+    private location: Location,
+    private router:Router
+  ) { }
 
   ngOnInit():void {
     this.getSpot();
@@ -36,7 +39,7 @@ export class ParkingSpotsDeleteComponent implements OnInit {
 
   deleteSpot(): void {
     this.parkingSpotService.deleteParkingSpot(this.id)
-    .subscribe(spot => console.log(spot));
+    .subscribe(spot =>  this.router.navigate(['/Home']));
   }
 
 }

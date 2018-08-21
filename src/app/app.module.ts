@@ -6,7 +6,7 @@ import { HttpClientModule }    from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ParkingSpotsComponent } from './parking-spots/parking-spots.component';
-import { ReportComponent } from './report/report.component';
+
 import { AppRoutingModule } from './/app-routing.module';
 import { ParkingSpotsCreateComponent } from './parking-spots-create/parking-spots-create.component';
 import { ParkingSpotsEditComponent } from './parking-spots-edit/parking-spots-edit.component';
@@ -25,7 +25,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AppComponent,
     ParkingSpotsComponent,
     NavbarComponent,
-    ReportComponent,
+   
     ParkingSpotsCreateComponent,
     ParkingSpotsEditComponent,
     ParkingSpotsDeleteComponent,
