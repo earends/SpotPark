@@ -1,7 +1,36 @@
-<form>
-  <div class="form-group">
-    <label >Edit: {{id}}</label>
-    <input type="text" class="form-control" id="title-input" aria-describedby="emailHelp" placeholder="Chicago">
-  </div>
-  <button type="submit" class="btn btn-primary">Update</button>
-</form>
+<div *ngIf="spot">
+  <h1>Edit:  {{spot.title}}</h1>
+  <form  #spotForm="ngForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label >Title</label>
+        <input [(ngModel)]="spot.title" name="title" type="text" class="form-control" aria-describedby="emailHelp" placeholder="Seattle Spot">
+      </div>
+      <div class="form-group">
+        <label >Size</label>
+        <select [(ngModel)]="spot.size" name="size" class="form-control" >
+          <option>Small</option>
+          <option>Medium</option>
+          <option>Large</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label >Location</label>
+        <input [(ngModel)]="spot.location" name="location" type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Seattle">
+      </div>
+      <div class="form-group">
+        <label >Special Instructions</label>
+        <textarea [(ngModel)]="spot.specialInstructions" name="specialInstructions" class="form-control" rows="3"></textarea>
+      </div>
+      <div class="form-group">
+        <label >Cost Per Hour</label>
+        <input type="number" [(ngModel)]="spot.cost" name="cost" class="form-control"  aria-describedby="emailHelp" placeholder="25">
+      </div>
+      <div class="form-group">
+          <label >Email</label>
+          <input [(ngModel)]="spot.email" name="email" type="email" class="form-control"  aria-describedby="emailHelp" placeholder="john@gmail.com">
+          <small class="form-text text-muted">We'll never share your email with anyone else. This is used for tracking your Posting.</small>
+        </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    
+</div>

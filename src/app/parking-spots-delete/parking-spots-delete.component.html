@@ -1,6 +1,10 @@
-<form>
-  <div class="form-group">
-    <label >Delete: {{id}}</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+<div *ngIf="spot">
+  <form  #spotForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label >Delete: {{spot.title}}</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+

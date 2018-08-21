@@ -12,25 +12,54 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
+
 export class ParkingSpotsService {
   private parking_spot_url = 'https://localhost:44393/api/ParkingSpots';  // URL to web api
 
   constructor(
     private http: HttpClient,
+   
+    
   ) { }
 
   getParkingSpots():Observable<ParkingSpot[]> {
-    
-    
      return this.http.get<ParkingSpot[]>(this.parking_spot_url)
       .pipe(
         catchError(this.handleError('getSpots', []))
       );
-      
-     
-     
   }
 
+  postParkingSpot(spot:ParkingSpot):Observable<ParkingSpot> {
+    return this.http.post<ParkingSpot>(this.parking_spot_url, spot, httpOptions).pipe(
+      catchError(this.handleError<ParkingSpot>('addSpot'))
+    ); 
+  }
+
+  /** DELETE: delete the hero from the server */
+  deleteParkingSpot (id: number): Observable<ParkingSpot> {
+    const url = `${this.parking_spot_url}/${id}`;
+    
+    return this.http.delete<ParkingSpot>(url, httpOptions).pipe(
+      catchError(this.handleError<ParkingSpot>('deleteSpot'))
+    );
+  }
+
+  /** PUT: update the hero on the server */
+  updateParkingSpot(spot:ParkingSpot): Observable<ParkingSpot> {
+    const url = `${this.parking_spot_url}/${spot.id}`;
+    return this.http.put(url, spot, httpOptions).pipe(
+      catchError(this.handleError<any>('updateSpot'))
+    );
+  }
+
+
+   /** GET hero by id. Will 404 if id not found */
+   getParkingSpot(id: number): Observable<ParkingSpot> {
+    const url = `${this.parking_spot_url}/${id}`;
+    return this.http.get<ParkingSpot>(url).pipe(
+      catchError(this.handleError<ParkingSpot>(`getSpot id=${id}`))
+    );
+  }
 
    /**
    * Handle Http operation that failed.
@@ -51,8 +80,5 @@ export class ParkingSpotsService {
       return of(result as T);
     };
   }
-
-  
-
 
 }

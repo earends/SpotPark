@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ParkingSpotsService } from '../parking-spots.service';
 import {ParkingSpot} from '../ParkingSpot';
-import {SPOTS} from '../mock-spots';
+
 
 @Component({
   selector: 'app-parking-spots',
@@ -20,9 +20,9 @@ export class ParkingSpotsComponent implements OnInit {
   }
   
   getSpots(): void {
-    this.parkingSpots = SPOTS;
-    //this.parkingSpotService.getParkingSpots()
-    //.subscribe(parkingSpots => this.parkingSpots = parkingSpots);
+    
+    this.parkingSpotService.getParkingSpots()
+    .subscribe(parkingSpots => this.parkingSpots = parkingSpots);
   }
 
   onSelect(spot: ParkingSpot): void {
