@@ -1,4 +1,9 @@
 export class ParkingSpot {
+  id: number;
+  title: string;
+}
+/*
+export class ParkingSpot {
     id: number;
     title: string;
     size: number;
@@ -11,3 +16,4 @@ export class ParkingSpot {
     email: string;
 
   }
+  */

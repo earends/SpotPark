@@ -1,6 +1,6 @@
 <div>
   <h1>Parking Spots Available</h1>
-    <li *ngFor="let p of parkingSpots">
-      <span>{{p.id}}</span> {{p.title}}
+    <li *ngFor="let spot of parkingSpots" >
+      <a routerLink="/Spot/{{spot.id}}" routerLinkActive="active">{{spot.title}}</a>
     </li>
 </div>

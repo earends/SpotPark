@@ -6,6 +6,7 @@ import { ParkingSpotsCreateComponent }  from './parking-spots-create/parking-spo
 import { ParkingSpotComponent }  from './parking-spot/parking-spot.component';
 import { ParkingSpotsEditComponent }  from './parking-spots-edit/parking-spots-edit.component';
 import { ParkingSpotsDeleteComponent }  from './parking-spots-delete/parking-spots-delete.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 const routes: Routes = [
@@ -15,8 +16,7 @@ const routes: Routes = [
   {path: 'Spot/:id', component:ParkingSpotComponent},
   {path: 'Edit/:id',component:ParkingSpotsEditComponent},
   {path: 'Delete/:id',component:ParkingSpotsDeleteComponent},
-  {path:'**',component:ParkingSpotsComponent}
-  
+  {path:'**',component:PageNotFoundComponent}
 ];
 
 

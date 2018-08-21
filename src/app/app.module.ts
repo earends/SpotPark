@@ -12,6 +12,7 @@ import { ParkingSpotsCreateComponent } from './parking-spots-create/parking-spot
 import { ParkingSpotsEditComponent } from './parking-spots-edit/parking-spots-edit.component';
 import { ParkingSpotsDeleteComponent } from './parking-spots-delete/parking-spots-delete.component';
 import { ParkingSpotComponent } from './parking-spot/parking-spot.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   imports: [
@@ -29,6 +30,7 @@ import { ParkingSpotComponent } from './parking-spot/parking-spot.component';
     ParkingSpotsEditComponent,
     ParkingSpotsDeleteComponent,
     ParkingSpotComponent,
+    PageNotFoundComponent,
   ],
   bootstrap: [ AppComponent ]
 })
